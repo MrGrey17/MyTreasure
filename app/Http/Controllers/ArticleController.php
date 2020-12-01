@@ -6,93 +6,40 @@ use Illuminate\Http\Request;
 
 use App\Article;
 use App\Http\Resources\Article as ArticleResource;
+use App\Http\Resources\ArticleCollection;
+
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return ArticleResource::collection(Article::paginate(10));
+        return new ArticleCollection(Article::paginate(10));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {   
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'description' => 'required',
+        ]);
         $article = Article::create($request->all());
-
         return new ArticleResource($article);
-
-        // TODO: add http headers (200, 404, 500)
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Article $article)
     {
-        return new ArticleResource(Article::findOrFail($id));
+        return new ArticleResource($article);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, Article $article)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $article = Article::findOrFail($id);
         $article->update($request->all());
-        $article->save();
-
-        return new ArticleResource(Article::findOrFail($id));
+        return new ArticleResource($article);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        $article = Article::findOrFail($id);
         $article->delete();
-
-        return redirect('/');
+        return null;
     }
 }

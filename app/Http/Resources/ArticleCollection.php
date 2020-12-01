@@ -2,25 +2,21 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class Article extends JsonResource
+class ArticleCollection extends ResourceCollection
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function toArray($request)
     {
-        return with([
-            'id'    => $this->id, 
-            'title' => $this->title,
-            'description'  => $this->description
-        ]);
+        return with(parent::toArray($request));
     }
-
+    // TODO: maybe the data can be taken from App \ Http \ Resources \ Article, but I don't know how to do it 
     public function with($request) 
     {
         return [
@@ -30,4 +26,5 @@ class Article extends JsonResource
             'author_telegram' => 'https://t.me/MrKrist16/'
         ];
     }
+    
 }

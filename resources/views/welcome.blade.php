@@ -8,14 +8,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-    {{-- Test Form --}}
-        <form action="api/articles/60" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="text" name="title" value="fucking title">
-            <input type="text" name="description" value="test description">
-            <button type="submit"></button>
-        </form>
+        <div id="listArticles"></div>
     </body>
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>

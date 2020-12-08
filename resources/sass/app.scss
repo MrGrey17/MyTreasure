@@ -15,7 +15,13 @@
 }
 
 .article{
-    width: 55%;
+    max-width: 55%;
     margin-top: 3%;
     text-align: center;
+}
+
+.article > img{
+    max-width: 100%;
+    height: auto;
+    max-height:100%
 }

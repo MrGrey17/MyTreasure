@@ -48,7 +48,7 @@ class ListArticles extends Component {
                         <div className="article" key={article.id}>
                             <h2>{ article.title }</h2>
                             <p>{ article.description }</p>
-                            <img src="{article.image}" />
+                            <img src={'storage/articles/images/' + article.image } />
                         </div>
                     ))}
                 </div>

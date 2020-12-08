@@ -65800,7 +65800,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
+__webpack_require__(/*! ./components/ListArticles */ "./resources/js/components/ListArticles.jsx");
 
 /***/ }),
 
@@ -65849,10 +65849,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Example.js ***!
-  \********************************************/
+/***/ "./resources/js/components/ListArticles.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/ListArticles.jsx ***!
+  \**************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -65950,7 +65950,7 @@ var ListArticles = /*#__PURE__*/function (_Component) {
             className: "article",
             key: article.id
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, article.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, article.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "{article.image}"
+            src: 'storage/articles/images/' + article.image
           }));
         }));
       }
@@ -65984,8 +65984,8 @@ if (document.getElementById('listArticles')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mrgrey/Desktop/LaravelCode/mytreasure/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mrgrey/Desktop/LaravelCode/mytreasure/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/mrgrey/www/MyTreasure/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/mrgrey/www/MyTreasure/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

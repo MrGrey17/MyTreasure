@@ -39,6 +39,8 @@ class ListArticles extends Component {
             return <div>Error: {error.message}</div>;
         }else if (!isLoaded){
             return <div>Loading...</div>
+        }else if (articles.length == 0){
+            return <div>No articles yet</div>
         }else {
             return (
                 <div className="container">
@@ -46,6 +48,7 @@ class ListArticles extends Component {
                         <div className="article" key={article.id}>
                             <h2>{ article.title }</h2>
                             <p>{ article.description }</p>
+                            <img src="{article.image}" />
                         </div>
                     ))}
                 </div>

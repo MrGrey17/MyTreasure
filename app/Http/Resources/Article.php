@@ -17,7 +17,10 @@ class Article extends JsonResource
         return with([
             'id'    => $this->id, 
             'title' => $this->title,
-            'description'  => $this->description
+            'description'  => $this->description,
+            'image' => $this->image,
+            'views' => $this->views,
+            'likesAndDislikes' => $this->likesAndDislikes
         ]);
     }
 

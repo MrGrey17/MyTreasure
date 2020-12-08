@@ -9,20 +9,22 @@ class ListArticles extends Component {
             error: null,
             isLoaded: false,
             articles: [],
-            currentArticle: null
+            url: 'api/articles/',
+            links: [],
+            currentArticle: null,
         }
     }
 
     componentDidMount() {
-        // Fetch API in action 
-        fetch('http://127.0.0.1:8000/api/articles')
+        // Fetch Articles and another data
+        fetch(this.state.url)
             .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        articles: result.data
-                    });
+            .then((res) => {
+                this.setState({
+                    isLoaded: true,
+                    articles: res.data,
+                    links: res.links
+                }); 
             },
             (error) => {
                 this.setState({
@@ -30,11 +32,46 @@ class ListArticles extends Component {
                     error
                 });
             }
-        )
+        );
+    }
+
+    nextPage(){
+        this.setState({
+            url: this.state.links.next,
+        });
+        
+        this.componentDidMount();
+        console.log(this.state.links.next);
+        console.log(this.state.url);
+
+    }
+
+    prevPage(){
+        this.setState({
+            url: this.state.links.prev,
+        });
+
+        this.componentDidMount();
+    }
+
+    firstPage(){
+        this.setState({
+            url: this.state.links.first,
+        });
+
+        this.componentDidMount();
+    }
+
+    lastPage(){
+        this.setState({
+            url: this.state.links.last,
+        });
+
+        this.componentDidMount();
     }
 
     render() {
-        const { error, isLoaded, articles } = this.state;
+        const { error, isLoaded, articles} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         }else if (!isLoaded){
@@ -51,6 +88,10 @@ class ListArticles extends Component {
                             <img src={'storage/articles/images/' + article.image } />
                         </div>
                     ))}
+                    <button className="btn btn-default" onClick={(e) => this.nextPage(e)}>Next</button>
+                    <button className="btn btn-default" onClick={this.firstPage.bind(this)}>First</button>
+                    <button className="btn btn-default" onClick={this.lastPage.bind(this)}>Last</button>
+                    <button className="btn btn-default" onClick={this.prevPage.bind(this)}>Prev</button>
                 </div>
             );
         }

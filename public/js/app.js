@@ -65903,6 +65903,8 @@ var ListArticles = /*#__PURE__*/function (_Component) {
       error: null,
       isLoaded: false,
       articles: [],
+      url: 'api/articles/',
+      links: [],
       currentArticle: null
     };
     return _this;
@@ -65913,13 +65915,14 @@ var ListArticles = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      // Fetch API in action 
-      fetch('http://127.0.0.1:8000/api/articles').then(function (res) {
+      // Fetch Articles and another data
+      fetch(this.state.url).then(function (res) {
         return res.json();
-      }).then(function (result) {
+      }).then(function (res) {
         _this2.setState({
           isLoaded: true,
-          articles: result.data
+          articles: res.data,
+          links: res.links
         });
       }, function (error) {
         _this2.setState({
@@ -65929,8 +65932,44 @@ var ListArticles = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "nextPage",
+    value: function nextPage() {
+      this.setState({
+        url: this.state.links.next
+      });
+      this.componentDidMount();
+      console.log(this.state.links.next);
+      console.log(this.state.url);
+    }
+  }, {
+    key: "prevPage",
+    value: function prevPage() {
+      this.setState({
+        url: this.state.links.prev
+      });
+      this.componentDidMount();
+    }
+  }, {
+    key: "firstPage",
+    value: function firstPage() {
+      this.setState({
+        url: this.state.links.first
+      });
+      this.componentDidMount();
+    }
+  }, {
+    key: "lastPage",
+    value: function lastPage() {
+      this.setState({
+        url: this.state.links.last
+      });
+      this.componentDidMount();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var _this$state = this.state,
           error = _this$state.error,
           isLoaded = _this$state.isLoaded,
@@ -65952,7 +65991,21 @@ var ListArticles = /*#__PURE__*/function (_Component) {
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, article.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, article.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: 'storage/articles/images/' + article.image
           }));
-        }));
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-default",
+          onClick: function onClick(e) {
+            return _this3.nextPage(e);
+          }
+        }, "Next"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-default",
+          onClick: this.firstPage.bind(this)
+        }, "First"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-default",
+          onClick: this.lastPage.bind(this)
+        }, "Last"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-default",
+          onClick: this.prevPage.bind(this)
+        }, "Prev"));
       }
     }
   }]);

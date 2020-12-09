@@ -53,7 +53,7 @@ class ListArticles extends Component {
     }
 
     firstPage(){
-        this.url = this.state.links.prev;
+        this.url = this.state.links.first;
 
         window.scrollTo(0, 0);
 
@@ -61,7 +61,7 @@ class ListArticles extends Component {
     }
 
     lastPage(){
-        this.url = this.state.links.prev;
+        this.url = this.state.links.last;
 
         window.scrollTo(0, 0);
 

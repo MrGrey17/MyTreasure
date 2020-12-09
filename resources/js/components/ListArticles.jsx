@@ -9,15 +9,16 @@ class ListArticles extends Component {
             error: null,
             isLoaded: false,
             articles: [],
-            url: 'api/articles/',
             links: [],
             currentArticle: null,
         }
+
+        this.url = 'api/articles/';
     }
 
     componentDidMount() {
         // Fetch Articles and another data
-        fetch(this.state.url)
+        fetch(this.url)
             .then(res => res.json())
             .then((res) => {
                 this.setState({
@@ -36,36 +37,33 @@ class ListArticles extends Component {
     }
 
     nextPage(){
-        this.setState({
-            url: this.state.links.next,
-        });
+        this.url = this.state.links.next;
+
+        window.scrollTo(0, 0);
         
         this.componentDidMount();
-        console.log(this.state.links.next);
-        console.log(this.state.url);
-
     }
 
     prevPage(){
-        this.setState({
-            url: this.state.links.prev,
-        });
+        this.url = this.state.links.prev;
+
+        window.scrollTo(0, 0);
 
         this.componentDidMount();
     }
 
     firstPage(){
-        this.setState({
-            url: this.state.links.first,
-        });
+        this.url = this.state.links.prev;
+
+        window.scrollTo(0, 0);
 
         this.componentDidMount();
     }
 
     lastPage(){
-        this.setState({
-            url: this.state.links.last,
-        });
+        this.url = this.state.links.prev;
+
+        window.scrollTo(0, 0);
 
         this.componentDidMount();
     }
@@ -89,9 +87,9 @@ class ListArticles extends Component {
                         </div>
                     ))}
                     <button className="btn btn-default" onClick={(e) => this.nextPage(e)}>Next</button>
-                    <button className="btn btn-default" onClick={this.firstPage.bind(this)}>First</button>
-                    <button className="btn btn-default" onClick={this.lastPage.bind(this)}>Last</button>
-                    <button className="btn btn-default" onClick={this.prevPage.bind(this)}>Prev</button>
+                    <button className="btn btn-default" onClick={(e) => this.firstPage(e)}>First</button>
+                    <button className="btn btn-default" onClick={(e) => this.lastPage(e)}>Last</button>
+                    <button className="btn btn-default" onClick={(e) => this.prevPage(e)}>Prev</button>
                 </div>
             );
         }

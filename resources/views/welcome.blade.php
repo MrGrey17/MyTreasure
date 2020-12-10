@@ -23,17 +23,26 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
                 </div>
                 <div class="activity">
-                    <div class="views">
-                        <img src="#">
-                        <p>143</p>
-                    </div>
                     <div class="likes">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                        </div>
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        </div>
                         <p>12</p>
                     </div>
                     <div class="comments">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
+                        </div>
                         <p>3</p>
+                    </div>
+                    <div class="views">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
+                        </div>
+                        <p>143</p>
                     </div>
                 </div>
             </div>
@@ -48,17 +57,24 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
                 </div>
                 <div class="activity">
-                    <div class="views">
-                        <img src="#">
-                        <p>143</p>
-                    </div>
                     <div class="likes">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        </div>
                         <p>12</p>
                     </div>
                     <div class="comments">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
+                        </div>
                         <p>3</p>
+                    </div>
+                    <div class="views">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
+                        </div>
+                        <p>143</p>
                     </div>
                 </div>
             </div>
@@ -73,17 +89,24 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
                 </div>
                 <div class="activity">
-                    <div class="views">
-                        <img src="#">
-                        <p>143</p>
-                    </div>
                     <div class="likes">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        </div>
                         <p>12</p>
                     </div>
                     <div class="comments">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
+                        </div>
                         <p>3</p>
+                    </div>
+                    <div class="views">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
+                        </div>
+                        <p>143</p>
                     </div>
                 </div>
             </div>
@@ -98,17 +121,24 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
                 </div>
                 <div class="activity">
-                    <div class="views">
-                        <img src="#">
-                        <p>143</p>
-                    </div>
                     <div class="likes">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        </div>
                         <p>12</p>
                     </div>
                     <div class="comments">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
+                        </div>
                         <p>3</p>
+                    </div>
+                    <div class="views">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
+                        </div>
+                        <p>143</p>
                     </div>
                 </div>
             </div>
@@ -123,17 +153,24 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
                 </div>
                 <div class="activity">
-                    <div class="views">
-                        <img src="#">
-                        <p>143</p>
-                    </div>
                     <div class="likes">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        </div>
                         <p>12</p>
                     </div>
                     <div class="comments">
-                        <img src="#">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
+                        </div>
                         <p>3</p>
+                    </div>
+                    <div class="views">
+                        <div class="container-images">
+                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
+                        </div>
+                        <p>143</p>
                     </div>
                 </div>
             </div>

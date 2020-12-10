@@ -65903,10 +65903,10 @@ var ListArticles = /*#__PURE__*/function (_Component) {
       error: null,
       isLoaded: false,
       articles: [],
-      url: 'api/articles/',
       links: [],
       currentArticle: null
     };
+    _this.url = 'api/articles/';
     return _this;
   }
 
@@ -65916,7 +65916,7 @@ var ListArticles = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       // Fetch Articles and another data
-      fetch(this.state.url).then(function (res) {
+      fetch(this.url).then(function (res) {
         return res.json();
       }).then(function (res) {
         _this2.setState({
@@ -65934,35 +65934,29 @@ var ListArticles = /*#__PURE__*/function (_Component) {
   }, {
     key: "nextPage",
     value: function nextPage() {
-      this.setState({
-        url: this.state.links.next
-      });
+      this.url = this.state.links.next;
+      window.scrollTo(0, 0);
       this.componentDidMount();
-      console.log(this.state.links.next);
-      console.log(this.state.url);
     }
   }, {
     key: "prevPage",
     value: function prevPage() {
-      this.setState({
-        url: this.state.links.prev
-      });
+      this.url = this.state.links.prev;
+      window.scrollTo(0, 0);
       this.componentDidMount();
     }
   }, {
     key: "firstPage",
     value: function firstPage() {
-      this.setState({
-        url: this.state.links.first
-      });
+      this.url = this.state.links.first;
+      window.scrollTo(0, 0);
       this.componentDidMount();
     }
   }, {
     key: "lastPage",
     value: function lastPage() {
-      this.setState({
-        url: this.state.links.last
-      });
+      this.url = this.state.links.last;
+      window.scrollTo(0, 0);
       this.componentDidMount();
     }
   }, {
@@ -65998,13 +65992,19 @@ var ListArticles = /*#__PURE__*/function (_Component) {
           }
         }, "Next"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-default",
-          onClick: this.firstPage.bind(this)
+          onClick: function onClick(e) {
+            return _this3.firstPage(e);
+          }
         }, "First"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-default",
-          onClick: this.lastPage.bind(this)
+          onClick: function onClick(e) {
+            return _this3.lastPage(e);
+          }
         }, "Last"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "btn btn-default",
-          onClick: this.prevPage.bind(this)
+          onClick: function onClick(e) {
+            return _this3.prevPage(e);
+          }
         }, "Prev"));
       }
     }

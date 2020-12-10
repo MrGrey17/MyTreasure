@@ -7,21 +7,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.article{
-    max-width: 55%;
-    margin-top: 3%;
-    text-align: center;
-}
-
-.article > img{
-    max-width: 100%;
-    height: auto;
-    max-height:100%
+.list-articles{
+    max-width: 60%;
+    margin-left: 10%;
 }

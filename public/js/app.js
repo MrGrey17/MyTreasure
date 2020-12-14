@@ -66037,8 +66037,8 @@ if (document.getElementById('listArticles')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/mrgrey/www/MyTreasure/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/mrgrey/www/MyTreasure/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mrgrey/Desktop/sandbox/LaravelCode/mytreasure/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mrgrey/Desktop/sandbox/LaravelCode/mytreasure/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

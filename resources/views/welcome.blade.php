@@ -7,174 +7,34 @@
         <title>HomePage</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div class="list-articles">
-            <div class="article">
-                <div class="photo">
-                    <img src="#">
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="{{asset('storage/articles/images/0b0619d7ea877120e79e4244b12586dd.jpg')}}">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <div class="article-date-and-author">
+                    <h6 class="">Date: 20:16 23/10/2019</h6>
+                    <h6 class="">Author: Admin <img src="{{asset('storage/articles/regularImages/octoface.svg')}}"></h6>
                 </div>
-                <div class="article-title">
-                    <h1>Test Article</h1>
-                </div>
-                <div class="article-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
-                </div>
-                <div class="activity">
-                    <div class="likes">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="button-and-activity">
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="activity">
+                        <div class="likes">
+                            <img class="activity-img" src="{{asset('storage/articles/regularImages/thumbsup.svg')}}">
+                            <p>322</p>
                         </div>
-                        <div><p>12</p></div>
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
+                        <div class="views">
+                            <img class="activity-img" src="{{asset('storage/articles/regularImages/eye.svg')}}">
+                            <p>30</p>
                         </div>
-                    </div>
-                    <div class="comments">
-                        <div class="container">
-                            <div class="container-images">
-                                <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
-                            </div>
-                            <p>3</p>
+                        <div class="comments">
+                            <img class="activity-img" src="{{asset('storage/articles/regularImages/comment.svg')}}">
+                            <p>10</p>
                         </div>
-                    </div>
-                    <div class="views">
-                        <div class="container">
-                            <div class="container-images">
-                                <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
-                            </div>
-                            <p>143</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="photo">
-                    <img src="#">
-                </div>
-                <div class="article-title">
-                    <h1>Test Article</h1>
-                </div>
-                <div class="article-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
-                </div>
-                <div class="activity">
-                    <div class="likes">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
-                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
-                        </div>
-                        <p>12</p>
-                    </div>
-                    <div class="comments">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
-                        </div>
-                        <p>3</p>
-                    </div>
-                    <div class="views">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
-                        </div>
-                        <p>143</p>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="photo">
-                    <img src="#">
-                </div>
-                <div class="article-title">
-                    <h1>Test Article</h1>
-                </div>
-                <div class="article-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
-                </div>
-                <div class="activity">
-                    <div class="likes">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
-                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
-                        </div>
-                        <p>12</p>
-                    </div>
-                    <div class="comments">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
-                        </div>
-                        <p>3</p>
-                    </div>
-                    <div class="views">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
-                        </div>
-                        <p>143</p>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="photo">
-                    <img src="#">
-                </div>
-                <div class="article-title">
-                    <h1>Test Article</h1>
-                </div>
-                <div class="article-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
-                </div>
-                <div class="activity">
-                    <div class="likes">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
-                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
-                        </div>
-                        <p>12</p>
-                    </div>
-                    <div class="comments">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
-                        </div>
-                        <p>3</p>
-                    </div>
-                    <div class="views">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
-                        </div>
-                        <p>143</p>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="photo">
-                    <img src="#">
-                </div>
-                <div class="article-title">
-                    <h1>Test Article</h1>
-                </div>
-                <div class="article-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi doloremque aspernatur eos atque aliquam amet consequatur impedit officiis beatae veritatis, laudantium voluptates mollitia, molestiae distinctio ab placeat saepe quas.</p>
-                </div>
-                <div class="activity">
-                    <div class="likes">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/up.png')}}">
-                            <img src="{{asset('storage/articles/imagesForSite/down.png')}}">
-                        </div>
-                        <p>12</p>
-                    </div>
-                    <div class="comments">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/comments.png')}}">
-                        </div>
-                        <p>3</p>
-                    </div>
-                    <div class="views">
-                        <div class="container-images">
-                            <img src="{{asset('storage/articles/imagesForSite/views.png')}}">
-                        </div>
-                        <p>143</p>
                     </div>
                 </div>
             </div>

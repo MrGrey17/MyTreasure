@@ -78,12 +78,35 @@ class ListArticles extends Component {
             return <div>No articles yet</div>
         }else {
             return (
-                <div className="container">
+                <div className="articles">
                     {articles.map(article => (
-                        <div className="article" key={article.id}>
-                            <h2>{ article.title }</h2>
-                            <p>{ article.description }</p>
-                            <img src={'storage/articles/images/' + article.image } />
+                        <div className="card article" key={article.id}>
+                            <img className="card-img-top" src={'storage/articles/images/' + article.image}/>
+                            <div className="card-body">
+                                <h4 className="card-title">{ article.title }</h4>
+                                <div className="article-date-and-author">
+                                    <h6>Date: 20:16 23/10/2019</h6>
+                                    <div className="article-author"><h6>Author: Admin &nbsp;</h6><img src={'storage/articles/regularImages/octoface.svg'}/></div>
+                                </div>
+                                <p className="card-text">{article.description}</p>
+                                <div className="button-and-activity">
+                                    <a href="#" className="btn btn-primary">Read more...</a>
+                                    <div className="activity">
+                                        <div className="likes">
+                                            <img className="activity-img" src={'storage/articles/regularImages/thumbsup.svg'}/>
+                                            <p>322</p>
+                                        </div>
+                                        <div className="views">
+                                            <img className="activity-img" src={'storage/articles/regularImages/eye.svg'}/>
+                                            <p>30</p>
+                                        </div>
+                                        <div className="comments">
+                                            <img className="activity-img" src={'storage/articles/regularImages/comment.svg'}/>
+                                            <p>10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                     <button className="btn btn-default" onClick={(e) => this.nextPage(e)}>Next</button>
@@ -91,6 +114,12 @@ class ListArticles extends Component {
                     <button className="btn btn-default" onClick={(e) => this.lastPage(e)}>Last</button>
                     <button className="btn btn-default" onClick={(e) => this.prevPage(e)}>Prev</button>
                 </div>
+
+                // <div className="card article" key={article.id}>
+                //     <h2>{ article.title }</h2>
+                //     <p>{ article.description }</p>
+                //     <img src={'storage/articles/images/' + article.image } />
+                // </div>
             );
         }
     }

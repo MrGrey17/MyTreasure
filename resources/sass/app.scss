@@ -7,6 +7,13 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Edit bootstrap styles
+.card-text {
+    padding-bottom: 5%;
+}
+
+
+// My styles
 body {
     padding: 0 6%;
 }
@@ -33,6 +40,11 @@ body {
     display: flex;
     justify-content: space-between;
     padding-bottom: 5%;
+}
+
+.article-author {
+    display: flex;
+    align-items: flex-start;
 }
 
 .button-and-activity {

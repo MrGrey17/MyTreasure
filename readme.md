@@ -15,7 +15,7 @@
 
 ## <p aligin="center">If faker->image will not work</p>
 
-    vendor/fzaninotto/faker/src/Provider/Image.php
+    vendor/fzaninotto/faker/src/Faker/Provider/Image.php
 ```php
 public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = false, $word = null, $gray = false)
 {

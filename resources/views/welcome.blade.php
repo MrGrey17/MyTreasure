@@ -11,8 +11,6 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-    <div id="app">
-        <list-articles></list-articles>
-    </div>
+    <div id="listArticles"></div>
     <script src="{{ asset('js/app.js') }}"></script>
 </html>

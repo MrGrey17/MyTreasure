@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Http\Resources\Article as ArticleResource;
 use App\Http\Resources\ArticleCollection;
+use App\Http\Requests\StoreArticleRequest;
+use Storage;
 
 
 class ArticleController extends Controller
@@ -16,13 +18,16 @@ class ArticleController extends Controller
         return new ArticleCollection(Article::paginate(10));
     }
 
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {   
-        $this->validate($request, [
-            'title' => 'required|max:255',
-            'description' => 'required',
-        ]);
-        $article = Article::create($request->all());
+        $validatedData = $request->validated();
+        $path = $request->file('image')->store('articles/images', 'public');
+        $article = Article::create($request->only('title', 'description', 'image'));
+        $article->image = $path;
+
+        date_default_timezone_set('Europe/Kiev');
+
+        $article->save();
         return new ArticleResource($article);
     }
 
@@ -33,13 +38,22 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article)
     {
-        $article->update($request->all());
+        if($request->file('image') == True){
+            Storage::disk('public')->delete($article->image);
+            $path = $request->file('image')->store('articles/images', 'public');
+            $article->image = $path; 
+        }
+
+        date_default_timezone_set('Europe/Kiev');
+
+        $article->update($request->only('title', 'description'));
         return new ArticleResource($article);
     }
 
     public function destroy(Article $article)
     {
+        Storage::disk('public')->delete($article->image);
         $article->delete();
-        return null;
+        return null; // TODO: return to dashboard in admin panel
     }
 }

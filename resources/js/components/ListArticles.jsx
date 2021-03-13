@@ -81,7 +81,7 @@ class ListArticles extends Component {
                 <div className="articles">
                     {articles.map(article => (
                         <div className="card article" key={article.id}>
-                            <img className="card-img-top" src={'storage/articles/images/' + article.image}/>
+                            <img className="card-img-top" src={'storage/' + article.image}/>
                             <div className="card-body">
                                 <h4 className="card-title">{ article.title }</h4>
                                 <div className="article-date-and-author">

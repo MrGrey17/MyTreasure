@@ -11,6 +11,14 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-    <div id="listArticles"></div>
+    <form method="post" action="{{ route('articles.update', 57) }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        {{ method_field('PATCH') }}
+        <input type="text" name="title">
+        <input type="text" name="description">
+        <input type="file" name="image">
+        <button type="submit" class="btn btn-primary">Upload</button>
+    
+    </form>
     <script src="{{ asset('js/app.js') }}"></script>
 </html>

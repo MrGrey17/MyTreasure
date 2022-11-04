@@ -1,6 +1,8 @@
 <?php
 
-use App\Article;
+namespace Database\Seeders;
+
+use App\Models\Article;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Generator as Faker;
@@ -14,6 +16,6 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        factory(Article::class, 50)->create();
+        Article::factory()->count(50)->create();
     }
 }

@@ -1,5 +1,7 @@
 ## <p aligin="center">Instruction for installing: </p>
-    composer install
+    cd MyTreasure
+    composer install OR composer update
+    cp .env.example .env
     edit .env
     chmod -R 775 bootstrap/cache
     chmod -R 777 storage
@@ -15,7 +17,7 @@
 
 ## <p aligin="center">If faker->image will not work</p>
 
-    vendor/fzaninotto/faker/src/Faker/Provider/Image.php
+    vendor/fakerphp/faker/src/Faker/Provider/Image.php
 ```php
 public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = false, $word = null, $gray = false)
 {

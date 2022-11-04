@@ -81,7 +81,7 @@ class ListArticles extends Component {
                 <div className="articles">
                     {articles.map(article => (
                         <div className="card article" key={article.id}>
-                            <img className="card-img-top" src={'storage/' + article.image}/>
+                            <img className="card-img-top" src={'storage/articles/images/' + article.image}/>
                             <div className="card-body">
                                 <h4 className="card-title">{ article.title }</h4>
                                 <div className="article-date-and-author">
@@ -114,12 +114,6 @@ class ListArticles extends Component {
                     <button className="btn btn-default" onClick={(e) => this.lastPage(e)}>Last</button>
                     <button className="btn btn-default" onClick={(e) => this.prevPage(e)}>Prev</button>
                 </div>
-
-                // <div className="card article" key={article.id}>
-                //     <h2>{ article.title }</h2>
-                //     <p>{ article.description }</p>
-                //     <img src={'storage/articles/images/' + article.image } />
-                // </div>
             );
         }
     }

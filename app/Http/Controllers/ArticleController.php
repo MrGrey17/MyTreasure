@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Article;
+use App\Models\Article;
 use App\Http\Resources\Article as ArticleResource;
 use App\Http\Resources\ArticleCollection;
 use App\Http\Requests\StoreArticleRequest;
@@ -15,7 +15,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return new ArticleCollection(Article::paginate(10));
+        return new ArticleCollection(Article::paginate(9));
     }
 
     public function store(StoreArticleRequest $request)

@@ -27,10 +27,10 @@ class Article extends JsonResource
     public function with($request) 
     {
         return [
-            'version'    => '1.0.0',
-            'author_github' => 'https://github.com/MrKrist16/',
+            'version'    => '1.0.1',
+            'author_github' => 'https://github.com/MrGrey17/',
             'author_instagram' => 'https://instagram.com/sergii_kirnosov/',
-            'author_telegram' => 'https://t.me/MrKrist16/'
+            'author_telegram' => 'https://t.me/MrGrey17/'
         ];
     }
 }

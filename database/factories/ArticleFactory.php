@@ -16,6 +16,9 @@ class ArticleFactory extends Factory {
             'title' => $this->faker->sentence(),
             'description' => $this->faker->text(200),
             'image' => $this->faker->image('public/storage/articles/images', 1200, 800, null, false),
+            'likesAndDislikes' => 0,
+            'views' => 0,
+            'created_by' => 'System',
         ];
 
     }

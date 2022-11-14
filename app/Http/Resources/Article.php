@@ -20,7 +20,9 @@ class Article extends JsonResource
             'description'  => $this->description,
             'image' => $this->image,
             'views' => $this->views,
-            'likesAndDislikes' => $this->likesAndDislikes
+            'likesAndDislikes' => $this->likesAndDislikes,
+            'created_at' => $this->created_at->format('H:i Y/m/d'),
+            'created_by' => $this->created_by,
         ]);
     }
 

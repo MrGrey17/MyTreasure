@@ -20,6 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string('image');
             $table->integer('views')->nullable();
             $table->integer('likesAndDislikes')->nullable();
+            $table->string('created_by');
             $table->timestamps();
         });
     }

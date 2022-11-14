@@ -2254,12 +2254,12 @@ var ListArticles = /*#__PURE__*/function (_Component) {
                   children: article.title
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                   className: "article-date-and-author",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
-                    children: "Date: 20:16 23/10/2019"
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
+                    children: ["Date: ", article.created_at]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                     className: "article-author",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
-                      children: "Author: Admin \xA0"
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
+                      children: ["Author: ", article.created_by, " \xA0"]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                       src: 'storage/articles/regularImages/octoface.svg'
                     })]
@@ -2281,7 +2281,7 @@ var ListArticles = /*#__PURE__*/function (_Component) {
                         className: "activity-img",
                         src: 'storage/articles/regularImages/thumbsup.svg'
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                        children: "322"
+                        children: article.likesAndDislikes
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                       className: "views",
@@ -2289,15 +2289,7 @@ var ListArticles = /*#__PURE__*/function (_Component) {
                         className: "activity-img",
                         src: 'storage/articles/regularImages/eye.svg'
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                        children: "30"
-                      })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                      className: "comments",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                        className: "activity-img",
-                        src: 'storage/articles/regularImages/comment.svg'
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                        children: "10"
+                        children: article.views
                       })]
                     })]
                   })]
@@ -2329,14 +2321,7 @@ var ListArticles = /*#__PURE__*/function (_Component) {
             },
             children: "Prev"
           })]
-        })
-
-        // <div className="card article" key={article.id}>
-        //     <h2>{ article.title }</h2>
-        //     <p>{ article.description }</p>
-        //     <img src={'storage/articles/images/' + article.image } />
-        // </div>
-        ;
+        });
       }
     }
   }]);

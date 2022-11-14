@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Models\Article;
 use App\Http\Resources\Article as ArticleResource;
 use App\Http\Resources\ArticleCollection;
@@ -24,6 +25,9 @@ class ArticleController extends Controller
         $path = $request->file('image')->store('articles/images', 'public');
         $article = Article::create($request->only('title', 'description', 'image'));
         $article->image = $path;
+        $article->likesAndDisslikes = 0;
+        $article->views = 0;
+        $article->created_by = Auth::user()->name;
 
         date_default_timezone_set('Europe/Kiev');
 

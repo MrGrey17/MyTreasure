@@ -83,10 +83,10 @@ class ListArticles extends Component {
                         <div className="card article" key={article.id}>
                             <img className="card-img-top" src={'storage/articles/images/' + article.image}/>
                             <div className="card-body">
-                                <h4 className="card-title">{ article.title }</h4>
+                                <h4 className="card-title">{article.title}</h4>
                                 <div className="article-date-and-author">
-                                    <h6>Date: 20:16 23/10/2019</h6>
-                                    <div className="article-author"><h6>Author: Admin &nbsp;</h6><img src={'storage/articles/regularImages/octoface.svg'}/></div>
+                                    <h6>Date: {article.created_at}</h6>
+                                    <div className="article-author"><h6>Author: {article.created_by} &nbsp;</h6><img src={'storage/articles/regularImages/octoface.svg'}/></div>
                                 </div>
                                 <p className="card-text">{article.description}</p>
                                 <div className="button-and-activity">
@@ -94,15 +94,11 @@ class ListArticles extends Component {
                                     <div className="activity">
                                         <div className="likes">
                                             <img className="activity-img" src={'storage/articles/regularImages/thumbsup.svg'}/>
-                                            <p>322</p>
+                                            <p>{article.likesAndDislikes}</p>
                                         </div>
                                         <div className="views">
                                             <img className="activity-img" src={'storage/articles/regularImages/eye.svg'}/>
-                                            <p>30</p>
-                                        </div>
-                                        <div className="comments">
-                                            <img className="activity-img" src={'storage/articles/regularImages/comment.svg'}/>
-                                            <p>10</p>
+                                            <p>{article.views}</p>
                                         </div>
                                     </div>
                                 </div>

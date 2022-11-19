@@ -58,6 +58,6 @@ class ArticleController extends Controller
     {
         Storage::disk('public')->delete($article->image);
         $article->delete();
-        return null; // TODO: return to dashboard in admin panel
+        return null; // TODO: return to dashboard in admin/user panel
     }
 }

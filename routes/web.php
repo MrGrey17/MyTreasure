@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/register', 'Auth\RegisterController@returnRegisterPage');
 Route::post('/register', 'Auth\RegisterController@register');
+Route::get('/login', 'Auth\LoginController@returnLoginPage');
+Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 

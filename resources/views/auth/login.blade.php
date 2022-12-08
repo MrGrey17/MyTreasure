@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Register</title>
+        <title>Login</title>
         
         <!-- Fonts -->
         <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
@@ -25,15 +25,14 @@
         </div>
     @endif
 
-    <form action="/register" method="post">
-        {{ csrf_field() }}
-
-        <div>
-            <label for="name">
-                Name:
-            </label>
-            <input type="text"  name="name" placeholder="Type your Name here:">
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
         </div>
+    @endif
+
+    <form action="/login" method="post">
+        {{ csrf_field() }}
 
         <div>
             <label for="email">
@@ -50,7 +49,7 @@
         </div>
 
         <button type="submit">
-            Register
+            Login
         </button>
 
     </form>

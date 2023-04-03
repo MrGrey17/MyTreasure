@@ -27,7 +27,7 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
  
-            return redirect('/')->with('success', 'You successfully loged in!');
+            return redirect('/dashboard')->with('success', 'You successfully loged in!');
         }
 
         return redirect('/login')->with('error', 'Login details are not valid');
